@@ -4,17 +4,16 @@ from soldiers import Soldier
 
 def create_soldier(svc_num, rank, name, unit, corps):
   new_soldier = Soldier(svc_num, rank, name, unit, corps)
-
   return new_soldier
 
-def save_soldiers(soldier):
-  Soldier.save_soldier()
+def save_soldier(soldier):
+  soldier.save_soldier()
 
 def list_soldiers():
   return Soldier.display_soldiers()
 
 def remove_soldier(soldier):
-  return Soldier.delete_soldier()
+  return soldier.delete_soldier()
 
 def find_soldier(number):
   return Soldier.find_by_svcNumber(number)
@@ -41,7 +40,30 @@ def main():
 
       if short_code == 1:
         print('\n')
-        print("Option 1")
+        print("Creating a new soldier...")
+        
+        print("Enter the service number...")
+        try:
+          s_num = int(input())
+        except ValueError:
+          print("Please use numbers")
+
+        print("Enter the rank...")
+        s_rank = input().capitalize()
+
+        print("Enter the name...")
+        s_name = input().capitalize()
+
+        print("Enter the unit...")
+        s_unit = input().capitalize()
+
+        print("Enter the corps...")
+        s_corps = input().capitalize()
+        print('\n')
+        print(f"New soldier added:\n name:{s_name}, service number: {s_num}")
+
+        save_soldier(create_soldier(s_num, s_rank, s_name, s_unit, s_corps))
+
         print('\n')
 
       elif short_code == 2:
