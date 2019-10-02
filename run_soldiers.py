@@ -55,10 +55,10 @@ def main():
         s_name = input().capitalize()
 
         print("Enter the unit...")
-        s_unit = input().capitalize()
+        s_unit = input().upper()
 
         print("Enter the corps...")
-        s_corps = input().capitalize()
+        s_corps = input().upper()
         print('\n')
         print(f"New soldier added:\n name:{s_name}, service number: {s_num}")
 
@@ -73,13 +73,15 @@ def main():
 
       elif short_code == 3:
         print('\n')
-        print("Here is a list of all the soldiers:")
-        print('\n')
-
+        
         if list_soldiers():
+          print("Here is a list of all the soldiers:")
+          print('\n')
+
           for soldier in list_soldiers():
             print(f"{soldier.svc_num} {soldier.rank} {soldier.name} {soldier.unit} {soldier.corps}")
             print('\n')
+            
         else:
           print("Sorry, there are no soldiers in this list yet")    
 
