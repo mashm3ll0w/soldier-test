@@ -12,6 +12,12 @@ class Soldier:
   def display_soldiers(cls):
     return cls.soldiers_list
 
+  @classmethod
+  def check_if_exists(cls, number):
+    for soldier in cls.soldiers_list:
+      if soldier.svc_num == number:
+        return True
+
   def __init__(self, svc_num, rank, name, unit, corps):
     self.svc_num = svc_num
     self.rank = rank
