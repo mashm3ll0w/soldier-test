@@ -8,6 +8,10 @@ class Soldier:
   def delete_soldier(self):
     Soldier.soldiers_list.remove(self)
 
+  @classmethod
+  def display_soldiers(cls):
+    return cls.soldiers_list
+
   def __init__(self, svc_num, rank, name, unit, corps):
     self.svc_num = svc_num
     self.rank = rank
