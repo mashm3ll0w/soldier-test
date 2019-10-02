@@ -43,5 +43,13 @@ class TestSoldier(unittest.TestCase):
 
     self.assertTrue(found_soldier)
 
+  def test_find_soldier_by_svcNum(self):
+    self.new_soldier.save_soldier()
+    test_soldier = Soldier("201030", "Corporal", "Keys", "7 Rifles", "Combat Engineer")
+    test_soldier.save_soldier()
+
+    found_soldier = Soldier.find_by_svcNumber("201030")
+    self.assertEqual(found_soldier.svc_num, test_soldier.svc_num)
+
 if __name__ == '__main__':
   unittest.main()
