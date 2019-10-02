@@ -73,7 +73,16 @@ def main():
 
       elif short_code == 3:
         print('\n')
-        print("Option 3")
+        print("Here is a list of all the soldiers:")
+        print('\n')
+
+        if list_soldiers():
+          for soldier in list_soldiers():
+            print(f"{soldier.svc_num} {soldier.rank} {soldier.name} {soldier.unit} {soldier.corps}")
+            print('\n')
+        else:
+          print("Sorry, there are no soldiers in this list yet")    
+
         print('\n')
 
       elif short_code == 4:
