@@ -42,6 +42,12 @@ class Soldier:
       if soldier.unit == number:
         return soldier
 
+  @classmethod
+  def find_by_corps(cls, number):
+    for soldier in cls.soldiers_list:
+      if soldier.corps == number:
+        return soldier
+
   def __init__(self, svc_num, rank, name, unit, corps):
     self.svc_num = svc_num
     self.rank = rank
