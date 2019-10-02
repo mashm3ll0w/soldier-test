@@ -1,5 +1,6 @@
 import unittest
 from soldiers import Soldier
+import pyperclip
 
 class TestSoldier(unittest.TestCase):
 
@@ -82,6 +83,12 @@ class TestSoldier(unittest.TestCase):
 
     found_soldier = Soldier.find_by_corps("Gunner")
     self.assertEqual(found_soldier.corps, test_soldier.corps)
+
+  def test_copy_svcNumber(self):
+    self.new_soldier.save_soldier()
+    Soldier.copy_svcNumber("102030")
+
+    self.assertEqual(self.new_soldier.svc_num, pyperclip.paste())
 
 if __name__ == '__main__':
   unittest.main()
