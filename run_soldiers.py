@@ -25,3 +25,57 @@ def check_soldier_exists(number):
 def copy_soldier_svcNumber(number):
   return Soldier.copy_svcNumber(number)
 
+def main():
+
+  print("Hello, welcome to Atlas Private Corporation Systems v1.0.0")
+  print("Please enter your name:")
+  print('\n')
+  user_name = input().capitalize()
+
+  while True:
+    print('\n')
+    print(f"Hello {user_name}. Use the following keys to interact with the system: \n 1 - add a new soldier \n 2 - delete a soldier \n 3 - list all soldiers \n 4 - find a soldier \n 5 - copy a soldier's service number \n 6 - exit the system")
+
+    try:
+      short_code = int(input())
+
+      if short_code == 1:
+        print('\n')
+        print("Option 1")
+        print('\n')
+
+      elif short_code == 2:
+        print('\n')
+        print("Option 2")
+        print('\n')
+
+      elif short_code == 3:
+        print('\n')
+        print("Option 3")
+        print('\n')
+
+      elif short_code == 4:
+        print('\n')
+        print("Option 4")
+        print('\n')
+
+      elif short_code == 5:
+        print('\n')
+        print("Option 5")
+        print('\n')
+
+      elif short_code == 6:
+        print('\n')
+        print("existing the system...have a nice day")
+        print('\n')
+        break
+      else:
+        print('\n')
+        print("Please use the numbers 1 - 6")
+        print('\n')
+    except ValueError:
+      print('\n')
+      print("Please use the numbers 1 - 6")
+      print('\n')
+if __name__ == '__main__':
+  main()
