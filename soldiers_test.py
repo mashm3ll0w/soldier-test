@@ -34,5 +34,8 @@ class TestSoldier(unittest.TestCase):
 
     self.assertEqual(len(Soldier.soldiers_list), 1)
 
+  def test_list_all_soldiers(self):
+    self.assertEqual(Soldier.soldiers_list, Soldier.display_soldiers())
+
 if __name__ == '__main__':
   unittest.main()
