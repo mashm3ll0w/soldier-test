@@ -81,7 +81,7 @@ def main():
           for soldier in list_soldiers():
             print(f"{soldier.svc_num} {soldier.rank} {soldier.name} {soldier.unit} {soldier.corps}")
             print('\n')
-            
+
         else:
           print("Sorry, there are no soldiers in this list yet")    
 
@@ -89,8 +89,20 @@ def main():
 
       elif short_code == 4:
         print('\n')
-        print("Option 4")
-        print('\n')
+        print("Enter the service number of the soldier you wish to find")
+        
+        try:
+          search_number = int(input())
+        except ValueError:
+          print("Please enter a number")
+
+        if check_soldier_exists(search_number):
+          found_soldier = Soldier.find_by_svcNumber(search_number)
+          print("Here's the soldier you're looking for...")
+          print(f"{found_soldier.svc_num} {found_soldier.rank} {found_soldier.name} {found_soldier.unit} {found_soldier.corps}")
+          print('\n')
+        else:
+          print("Sorry, that soldier is not in our list")
 
       elif short_code == 5:
         print('\n')
