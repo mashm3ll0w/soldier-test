@@ -51,5 +51,13 @@ class TestSoldier(unittest.TestCase):
     found_soldier = Soldier.find_by_svcNumber("201030")
     self.assertEqual(found_soldier.svc_num, test_soldier.svc_num)
 
+  def test_find_by_rank(self):
+    self.new_soldier.save_soldier()
+    test_soldier = Soldier("201030", "Corporal", "Keys", "7 Rifles", "Combat Engineer")
+    test_soldier.save_soldier()
+
+    found_soldier = Soldier.find_by_rank("Corporal")
+    self.assertEqual(found_soldier.rank, test_soldier.rank)
+
 if __name__ == '__main__':
   unittest.main()
