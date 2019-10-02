@@ -37,5 +37,11 @@ class TestSoldier(unittest.TestCase):
   def test_list_all_soldiers(self):
     self.assertEqual(Soldier.soldiers_list, Soldier.display_soldiers())
 
+  def test_soldier_exists(self):
+    self.new_soldier.save_soldier()
+    found_soldier = Soldier.check_if_exists("102030")
+
+    self.assertTrue(found_soldier)
+
 if __name__ == '__main__':
   unittest.main()
