@@ -18,6 +18,13 @@ class TestSoldier(unittest.TestCase):
 
   def test_save_soldier(self):
     self.new_soldier.save_soldier()
+  
+  def test_save_multiple_soldiers(self):
+    self.new_soldier.save_soldier()
+    test_soldier = Soldier("201030", "Corporal", "Keys", "7 Rifles", "Combat Engineer")
+    test_soldier.save_soldier()
+
+    self.assertEqual(len(Soldier.soldiers_list), 2)
 
 
 if __name__ == '__main__':
