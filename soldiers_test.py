@@ -67,5 +67,13 @@ class TestSoldier(unittest.TestCase):
     found_soldier = Soldier.find_by_name("Keys")
     self.assertEqual(found_soldier.name, test_soldier.name)
 
+  def test_find_by_unit(self):
+    self.new_soldier.save_soldier()
+    test_soldier = Soldier("201030", "Corporal", "Keys", "7 Rifles", "Combat Engineer")
+    test_soldier.save_soldier()
+
+    found_soldier = Soldier.find_by_unit("7 Rifles")
+    self.assertEqual(found_soldier.unit, test_soldier.unit)
+
 if __name__ == '__main__':
   unittest.main()
