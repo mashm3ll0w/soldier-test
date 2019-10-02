@@ -16,5 +16,9 @@ class TestSoldier(unittest.TestCase):
     self.assertEqual(self.new_soldier.unit, "3 Rifles")
     self.assertEqual(self.new_soldier.corps, "Infantry")
 
+  def test_save_soldier(self):
+    self.new_soldier.save_soldier()
+
+
 if __name__ == '__main__':
   unittest.main()
