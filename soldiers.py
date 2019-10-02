@@ -1,3 +1,4 @@
+import pyperclip
 class Soldier:
 
   soldiers_list = []
@@ -47,6 +48,11 @@ class Soldier:
     for soldier in cls.soldiers_list:
       if soldier.corps == number:
         return soldier
+
+  @classmethod
+  def copy_svcNumber(cls, number):
+    found_soldier = Soldier.find_by_svcNumber(number)
+    pyperclip.copy(found_soldier.svc_num)
 
   def __init__(self, svc_num, rank, name, unit, corps):
     self.svc_num = svc_num
